@@ -10,13 +10,10 @@ import UIKit
 import AppTextviewPlaceholder
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var tempTextview: AppPlaceholderTextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        tempTextview.placeholder = "this is placeholder"
+        
     }
 
     override func didReceiveMemoryWarning() {
