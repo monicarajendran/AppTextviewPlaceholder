@@ -63,8 +63,8 @@ private let PlaceholderInset: CGFloat = 8
 
     /** Initializes the placeholder text view, waiting for a notification of text changed */
     func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(AppPlaceholderTextView.textChangedForPlaceholderTextView(_:)), name:NSNotification.Name.UITextViewTextDidChange , object: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(AppPlaceholderTextView.textChangedForPlaceholderTextView(_:)), name:NSNotification.Name.UITextViewTextDidBeginEditing , object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(AppPlaceholderTextView.textChangedForPlaceholderTextView(_:)), name:UITextView.textDidChangeNotification , object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(AppPlaceholderTextView.textChangedForPlaceholderTextView(_:)), name: UITextView.textDidBeginEditingNotification, object: self)
     }
     
     func removeObservers() {
@@ -91,15 +91,14 @@ private let PlaceholderInset: CGFloat = 8
         if text.count == 0 && self.placeholder != nil {
             
             let baseRect = placeholderBoundsContainedIn(self.bounds)
-            
-            let font = self.font ?? self.typingAttributes[NSAttributedStringKey.font.rawValue] as? UIFont ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
+            let font = self.font ?? self.typingAttributes[NSAttributedString.Key.paragraphStyle] ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
             
             self.placeholderColor.set()
             
             // build the custom paragraph style for our placeholder text
             var customParagraphStyle: NSMutableParagraphStyle!
             
-            if let defaultParagraphStyle =  typingAttributes[NSAttributedStringKey.paragraphStyle.rawValue] as? NSParagraphStyle {
+            if let defaultParagraphStyle =  typingAttributes[NSAttributedString.Key.paragraphStyle] as? NSParagraphStyle {
                 customParagraphStyle = defaultParagraphStyle.mutableCopy() as! NSMutableParagraphStyle
             } else {
                 customParagraphStyle = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
@@ -108,9 +107,9 @@ private let PlaceholderInset: CGFloat = 8
             // set attributes
             customParagraphStyle.lineBreakMode = NSLineBreakMode.byTruncatingTail
             customParagraphStyle.alignment = self.textAlignment
-            let attributes = [NSAttributedStringKey.font: font,
-                              NSAttributedStringKey.paragraphStyle: customParagraphStyle.copy() as! NSParagraphStyle,
-                              NSAttributedStringKey.foregroundColor: self.placeholderColor]
+            let attributes = [NSAttributedString.Key.font: font,
+                              NSAttributedString.Key.paragraphStyle: customParagraphStyle.copy() as! NSParagraphStyle,
+                              NSAttributedString.Key.foregroundColor: self.placeholderColor]
             
             // draw in rect.
             self.placeholder?.draw(in: baseRect, withAttributes: attributes)
@@ -120,10 +119,10 @@ private let PlaceholderInset: CGFloat = 8
     func placeholderBoundsContainedIn(_ containerBounds: CGRect) -> CGRect {
         
         // get the base rect with content insets.
-        let baseRect = UIEdgeInsetsInsetRect(containerBounds, UIEdgeInsetsMake(PlaceholderInset, PlaceholderInset/2.0, 0, 0))
+        let baseRect = containerBounds.inset(by: UIEdgeInsets(top: PlaceholderInset, left: PlaceholderInset/2.0, bottom: 0, right: 0))
         
         // adjust typing and selection attributes
-        if let paragraphStyle = typingAttributes[NSAttributedStringKey.paragraphStyle.rawValue] as? NSParagraphStyle {
+        if let paragraphStyle = typingAttributes[NSAttributedString.Key.paragraphStyle] as? NSParagraphStyle {
             baseRect.offsetBy(dx: paragraphStyle.headIndent, dy: paragraphStyle.firstLineHeadIndent)
         }
         
