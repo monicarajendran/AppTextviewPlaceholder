@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9ABFC2A2E4FC5654ED254E73 /* Pods_AppTextviewPlaceholder_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822DB36CDBDB5DDD439325AF /* Pods_AppTextviewPlaceholder_Example.framework */; };
+		DDEF737722C240BC0033B10B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DDEF737622C240BC0033B10B /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		822DB36CDBDB5DDD439325AF /* Pods_AppTextviewPlaceholder_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppTextviewPlaceholder_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60DDAD951DDCE696EF6C911 /* Pods-AppTextviewPlaceholder_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTextviewPlaceholder_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTextviewPlaceholder_Tests/Pods-AppTextviewPlaceholder_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C331118AFCDFC1EA8C767197 /* AppTextviewPlaceholder.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AppTextviewPlaceholder.podspec; path = ../AppTextviewPlaceholder.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DDEF737622C240BC0033B10B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E4F58F8E8ECC6C1A27175B9E /* Pods-AppTextviewPlaceholder_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTextviewPlaceholder_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTextviewPlaceholder_Example/Pods-AppTextviewPlaceholder_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E9562733D5FE61FFBE9D1540 /* Pods-AppTextviewPlaceholder_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTextviewPlaceholder_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTextviewPlaceholder_Example/Pods-AppTextviewPlaceholder_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				DDEF737622C240BC0033B10B /* .gitignore */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for AppTextviewPlaceholder */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDEF737722C240BC0033B10B /* .gitignore in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
