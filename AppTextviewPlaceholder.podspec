@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AppTextviewPlaceholder'
-  s.version          = '1.2'
+  s.version          = '1.4.0'
   s.swift_version    = '4.2'
   s.summary          = 'A candy for Textview Placeholder, TL;DR Plug it, Get It, Use It.'
   s.homepage         = 'https://github.com/monicarajendran/AppTextviewPlaceholder'

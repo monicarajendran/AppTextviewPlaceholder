@@ -1,5 +1,5 @@
 PODS:
-  - AppTextviewPlaceholder (1.1)
+  - AppTextviewPlaceholder (1.2)
 
 DEPENDENCIES:
   - AppTextviewPlaceholder (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AppTextviewPlaceholder: 4668b2c62ac571ff5b2c659606a327f168d4d7c7
+  AppTextviewPlaceholder: 0bd5c8cd95ddf6c0b70363a0862c376eb9529dfb
 
 PODFILE CHECKSUM: 6e960cc581f74176e6ca159b698191bcce18dd80
 
